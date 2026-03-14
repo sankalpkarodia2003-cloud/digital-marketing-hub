@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Digital Marketing Hub - Learn proven SEO, digital marketing strategies, content marketing, and blogging tips that actually work.">
-    <meta name="keywords" content="digital marketing, SEO, content marketing, social media, blogging tips, marketing tools">
-    <title>Digital Marketing Hub - SEO & Digital Marketing Blog</title>
+    <meta name="description" content="Master Digital Marketing & SEO. Learn proven strategies for SEO, content marketing, and business growth from industry experts.">
+    <meta name="keywords" content="SEO, digital marketing, content marketing, keyword research, backlinks, blogging">
+    <title>Digital Marketing Hub - Master SEO & Digital Marketing</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -20,38 +20,26 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary-dark: #0a0a0a;
-            --primary-white: #ffffff;
-            --accent-gold: #f4b400;
-            --accent-blue: #1e40af;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f8fafc;
-            --card-shadow: 0 20px 25px -5px rgba(0, 0,0, 0.1), 0 10px 10px -5px rgba(0, 0,0, 0.04);
-            --border-radius: 16px;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
-            overflow-x: hidden;
+            color: #333;
+            background: #ffffff;
         }
 
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
             padding: 1rem 0;
-            transition: all 0.3s ease;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
-        .nav-container {
+        nav {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -62,277 +50,190 @@
 
         .logo {
             font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 700;
             text-decoration: none;
+            color: white;
         }
 
-        .nav-menu {
+        .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
 
-        .nav-link {
+        .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
+            transition: opacity 0.3s ease;
         }
 
-        .nav-link:hover {
-            color: var(--accent-gold);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: var(--accent-gold);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
+        .nav-links a:hover {
+            opacity: 0.8;
         }
 
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            gap: 4px;
         }
 
         .hamburger span {
             width: 25px;
             height: 3px;
             background: white;
+            margin: 3px 0;
             transition: 0.3s;
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            background: linear-gradient(rgba(30,58,138,0.8), rgba(59,130,246,0.8)), 
+                        url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+            height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-            position: relative;
-            overflow: hidden;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4b400' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-text h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.1;
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, white, #e2e8f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            animation: fadeInUp 1s ease;
         }
 
-        .hero-text p {
-            font-size: 1.25rem;
-            color: #d1d5db;
+        .hero-content p {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
             margin-bottom: 2.5rem;
-            max-width: 500px;
+            max-width: 600px;
+            animation: fadeInUp 1s ease 0.2s both;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.4s both;
         }
 
         .btn {
             padding: 1rem 2rem;
-            border-radius: 12px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none;
+            cursor: pointer;
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
+            display: inline-block;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent-gold), #d97706);
-            color: var(--primary-dark);
-            box-shadow: 0 10px 20px rgba(244, 180, 0, 0.3);
+            background: #3b82f6;
+            color: white;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(244, 180, 0, 0.4);
+            background: #2563eb;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(59,130,246,0.4);
         }
 
         .btn-secondary {
             background: transparent;
             color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid white;
         }
 
         .btn-secondary:hover {
             background: white;
-            color: var(--primary-dark);
-            border-color: white;
+            color: #1e3a8a;
         }
 
-        .hero-image {
-            position: relative;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 24px;
-            box-shadow: var(--card-shadow);
-        }
-
-        /* Featured Articles */
-        .section {
-            padding: 5rem 0;
-        }
-
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        .section-title {
-            font-size: 3rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: linear-gradient(135deg, var(--text-dark), #374151);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        /* Section */
+        section {
+            padding: 5rem 0;
         }
 
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #1e3a8a;
+        }
+
+        /* Featured Articles */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .article-card {
-            background: var(--primary-white);
-            border-radius: var(--border-radius);
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             transition: all 0.4s ease;
-            border: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
         }
 
         .article-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
 
         .article-image {
             height: 220px;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-gold));
+            background-size: cover;
+            background-position: center;
             position: relative;
-            overflow: hidden;
         }
 
-        .article-image::before {
+        .article-image::after {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .article-card:hover .article-image::before {
-            left: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(59,130,246,0.1), rgba(30,58,138,0.1));
         }
 
         .article-content {
             padding: 2rem;
         }
 
-        .category-tag {
-            display: inline-block;
-            background: var(--accent-gold);
-            color: var(--primary-dark);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+        .article-content h3 {
+            font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 1rem;
+            color: #1e3a8a;
         }
 
-        .article-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
-        }
-
-        .article-title a {
-            color: var(--text-dark);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .article-card:hover .article-title a {
-            color: var(--accent-blue);
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 1.5rem;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .article-excerpt {
-            color: #4b5563;
+        .article-content p {
+            color: #666;
             margin-bottom: 1.5rem;
-            line-height: 1.6;
+        }
+
+        .read-more {
+            color: #3b82f6;
+            font-weight: 600;
+            text-decoration: none;
         }
 
         /* Categories */
@@ -344,116 +245,69 @@
         }
 
         .category-card {
-            background: var(--primary-white);
-            padding: 2.5rem 2rem;
-            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+            color: white;
+            padding: 2.5rem 1.5rem;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: var(--card-shadow);
             transition: all 0.3s ease;
-            border-top: 4px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-gold), var(--accent-blue));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .category-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(59,130,246,0.3);
         }
 
-        .category-card:hover::before {
-            transform: scaleX(1);
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
         .category-card h3 {
             font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
+            font-weight: 600;
         }
 
-        .category-card p {
-            color: var(--text-light);
-        }
-
-        /* Guest Post Section */
-        .guest-section {
-            background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
-            text-align: center;
-        }
-
-        .guest-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .guest-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* About Section */
-        .about-section {
-            background: var(--primary-dark);
-            color: white;
-        }
-
-        .about-content {
+        /* Guest Post & About */
+        .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            color: #d1d5db;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .stat {
+        .content-block {
+            background: #f8fafc;
+            padding: 3rem;
+            border-radius: 20px;
             text-align: center;
         }
 
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
+        .content-block img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .content-block h3 {
+            font-size: 2rem;
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
         }
 
         /* Footer */
-        .footer {
-            background: var(--primary-dark);
+        footer {
+            background: #1e3a8a;
             color: white;
-            padding: 4rem 0 2rem;
+            padding: 3rem 0 1rem;
         }
 
         .footer-content {
@@ -465,141 +319,240 @@
 
         .footer-section h3 {
             margin-bottom: 1rem;
-            color: white;
-            font-size: 1.2rem;
+            color: #60a5fa;
         }
 
-        .footer-link {
-            color: #9ca3af;
+        .footer-section a {
+            color: #cbd5e1;
             text-decoration: none;
             display: block;
             margin-bottom: 0.5rem;
             transition: color 0.3s ease;
         }
 
-        .footer-link:hover {
-            color: var(--accent-gold);
+        .footer-section a:hover {
+            color: white;
         }
 
-        .social-links {
+        .social-icons {
             display: flex;
             gap: 1rem;
+            margin-top: 1rem;
         }
 
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
+        .social-icons a {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            text-decoration: none;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
         }
 
-        .social-link:hover {
-            background: var(--accent-gold);
-            transform: translateY(-2px);
+        .social-icons a:hover {
+            background: #3b82f6;
+            transform: translateY(-3px);
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
-            color: #9ca3af;
+            color: #94a3b8;
         }
 
-        /* Mobile Responsiveness */
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
             }
 
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background: var(--primary-dark);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                padding: 2rem 0;
-            }
-
-            .nav-menu.active {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
                 left: 0;
+                width: 100%;
+                background: #1e3a8a;
+                flex-direction: column;
+                padding: 1rem;
             }
 
-            .hero-content {
-                grid-template-columns: 1fr;
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
                 text-align: center;
-                gap: 2rem;
+                padding: 2rem;
             }
 
             .cta-buttons {
-                justify-content: center;
+                flex-direction: column;
+                align-items: center;
             }
 
-            .about-content {
+            .two-column {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
-            .stats {
+            .articles-grid {
                 grid-template-columns: 1fr;
             }
-
-            .section-title {
-                font-size: 2rem;
-            }
         }
 
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <!-- Header -->
+    <header>
+        <nav>
             <a href="#" class="logo">Digital Marketing Hub</a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#featured" class="nav-link">Articles</a></li>
-                <li><a href="#categories" class="nav-link">Categories</a></li>
-                <li><a href="#write" class="nav-link">Write For Us</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#guest">Write For Us</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="hero-text fade-in">
-                <h1>Learn Digital Marketing & SEO<br>That Actually Works</h1>
-                <p>Master proven strategies from industry experts. Stay ahead with actionable SEO, content marketing, and social media insights that drive real results.</p>
-                <div class="cta-buttons">
-                    <a href="#featured" class="btn btn-primary">🚀 Read the Blog</a>
-                    <a href="#write" class="btn btn-secondary">✍️ Submit Guest Post</a>
-                </div>
+            <h1>Master Digital Marketing & SEO in the Modern Era</h1>
+            <p>Learn SEO, content marketing, and growth strategies used by professionals. Stay ahead with proven tactics that drive real results.</p>
+            <div class="cta-buttons">
+                <a href="#articles" class="btn btn-primary">Read the Blog</a>
+                <a href="#guest" class="btn btn-secondary">Submit Guest Post</a>
             </div>
-            <div class="hero-image fade-in">
-                <div style="width: 100%; height: 500px; background: linear-gradient(135deg, rgba(244,180,0,0.1), rgba(30,64,175,0.1)); border-radius: 24px; display: flex; align-items: center; justify-content: center
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section id="articles" class="container">
+        <h2 class="section-title">Featured Articles</h2>
+        <div class="articles-grid">
+            <article class="article-card">
+                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                <div class="article-content">
+                    <h3>What is SEO? Beginner's Guide</h3>
+                    <p>Learn how search engines work and how SEO helps websites rank on Google. This comprehensive guide covers everything you need to know to get started.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                <div class="article-content">
+                    <h3>10 Powerful Keyword Research Strategies</h3>
+                    <p>Discover how to find profitable keywords and grow organic traffic. Master tools and techniques used by top SEO professionals.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                <div class="article-content">
+                    <h3>How Backlinks Improve Website Ranking</h3>
+                    <p>Understand why backlinks are important for SEO and how to build them safely. Learn strategies that actually work in 2024.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="container">
+        <h2 class="section-title">Explore Categories</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">🔍</div>
+                <h3>SEO</h3>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">📱</div>
+                <h3>Social Media Marketing</h3>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">✍️</div>
+                <h3>Content Marketing</h3>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">📝</div>
+                <h3>Blogging Tips</h3>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🛠️</div>
+                <h3>Digital Marketing Tools</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guest Post & About -->
+    <section class="container">
+        <div class="two-column">
+            <div class="content-block">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blogger writing">
+                <h3>Write For Us</h3>
+                <p>Share your expertise with our 50K+ monthly readers. We accept high-quality guest posts on SEO, digital marketing, and growth strategies.</p>
+                <a href="#guest" class="btn btn-primary">Write For Us</a>
+            </div>
+            <div id="about" class="content-block">
+                <h3>About Digital Marketing Hub</h3>
+                <p>Digital Marketing Hub is a resource platform dedicated to helping beginners and professionals learn SEO, content marketing, and digital growth strategies. Our mission is to provide actionable insights that drive real results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Digital Marketing Hub</h3>
+                    <p>Your go-to resource for SEO, content marketing, and digital growth strategies. Learn from industry experts.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#articles">Articles</a>
+                    <a href="#categories">Categories</a>
+                    <a href="#guest">Write For Us</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="#about">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Advertise</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
